@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NOTAS</title>
+    <link rel="stylesheet" href="/front-end/estilo/main.css">
+    <link rel="stylesheet" href="/front-end/estilo/css/bootstrap-reboot.min.css">
+    <link rel="stylesheet" href="/front-end/estilo/css/bootstrap.min.css">
+</head>
+<body>
+    <nav>    
+        <h1 class="container-fluid d-flex justify-content-center align-items-center bg-warning font-family-roboto">Notas</h1> 
+    </nav>
+    <div class="container-fluid d-flex justify-content-center align-items-center float-start ">
+    <form id="dataForm" class="container-fluid d-flex justify-content-center align-items-center ">
+        <label for="text" class="font-family-roboto font-size">Consulte sua Nota:</label>
+    <div class="campo p-3"><input type="text" name="informacao" id="inputData" required placeholder="Digite seu RA"></div><!--campo-->
+       <button type="submit" class="btn btn-success btn-lg">Enviar</button></div><!--btn-->
+    </form>
+</div><!--container-->
+<div id="resultTable" class="table table-dark table-striped conteiner"></div>
+<footer class="position-absolute bottom-0 end-0 container-fluid">
+    <div class="container-fluid">
+        <div class="d-flex justify-content-center align-items-center bg-warning font-family-roboto">Desenvolvido por:  <a href=" kauan">Kauan</a></div>
+    </div>
+</footer>
+
+
+    <script src="/front-end/scripts/request.get.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</html>
