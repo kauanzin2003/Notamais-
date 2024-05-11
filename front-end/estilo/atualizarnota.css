@@ -96,7 +96,19 @@ input{
     font-size: 1.5rem;
 }
 
-input#btn{
+.btn{
+    background-color: #103443;
+    width: 262px;
+    height: 76px;
+    cursor: pointer;
+    border-radius: 10px;
+    margin-left: 20px;
+    font-family: "Julius Sans One", sans-serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+input.btn{
     background-color: #103443;
     width: 262px;
     height: 76px;
@@ -106,7 +118,7 @@ input#btn{
     font-weight: 600;
 }
 
-input#btn:hover{
+.btn:hover{
     background-color: #16FF11;
     transition: ease 0.2s;
 }

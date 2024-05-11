@@ -23,16 +23,19 @@
 
     <h1 class="texto"><strong>Atualizar<br>Nota</strong></h1>
     <div class="formulario">
-    <form action="post">
-        <input type="text" required name="raProfessor" id="id_ra" placeholder="RA Professor">
-        <input type="text" required name="disciplina" id="codigo_disciplina" placeholder="disciplina">
-        <input type="text" required name="raAluno" id="RA_aluno" placeholder="RA  Aluno">
-        <input type="text" required name="nota" id="valor_nota" placeholder="Nota">
-        <input type="button" value="Enviar" id="btn">
-    </form>
-</div><!--formulario-->
-<div class="imagem">
-<img src="imagens/Vetor_aluno.jpg" alt="Imagem nao encontrada" width="849px" height="776px">
-</div><!--imagem-->
+        <form id="form-atualizar">
+            <input type="text" id="idNota" name="idNota" required placeholder="Id da nota">
+            <input type="text" id="nota" name="nota" required placeholder="Nova nota">
+            <input type="text" id="raAluno" name="raAluno" required placeholder="Ra do aluno">
+            <input type="text" id="disciplina" name="disciplina" required placeholder="Código da disciplina">
+            <input type="text" id="raProfessor" name="raProfessor" required placeholder="Ra do Professor">
+            <button type="submit" class="btn">Atualizar Nota</button>
+        </form>
+    </div><!--formulario-->
+
+    <div class="imagem">
+        <img src="imagens/Vetor_aluno.jpg" alt="Imagem nao encontrada" width="849px" height="776px">
+    </div><!--imagem-->
+    <script src="/front-end/scripts/js/put-request.js"></script>
 </body>
 </html>

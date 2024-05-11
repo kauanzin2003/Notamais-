@@ -23,16 +23,17 @@
 
     <h1 class="texto"><strong>Cadastrar<br>Nota</strong></h1>
     <div class="formulario">
-    <form action="post">
+    <form method="post" id="form-nota">
         <input type="text" required name="raProfessor" id="id_ra" placeholder="RA Professor">
         <input type="text" required name="disciplina" id="codigo_disciplina" placeholder="disciplina">
         <input type="text" required name="raAluno" id="RA_aluno" placeholder="RA  Aluno">
         <input type="text" required name="nota" id="valor_nota" placeholder="Nota">
-        <input type="button" value="Enviar" id="btn">
+        <input type="submit" value="Enviar" id="submit" class="btn">
     </form>
 </div><!--formulario-->
 <div class="imagem">
 <img src="imagens/Vetor_aluno.jpg" alt="Imagem nao encontrada" width="849px" height="776px">
 </div><!--imagem-->
+    <script src="/front-end/scripts/js/postrequest.js"></script>
 </body>
 </html>

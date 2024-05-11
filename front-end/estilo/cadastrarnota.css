@@ -96,7 +96,7 @@ input{
     font-size: 1.5rem;
 }
 
-input#btn{
+input.btn{
     background-color: #103443;
     width: 262px;
     height: 76px;
@@ -106,7 +106,7 @@ input#btn{
     font-weight: 600;
 }
 
-input#btn:hover{
+input.btn:hover{
     background-color: #16FF11;
     transition: ease 0.2s;
 }
@@ -122,6 +122,7 @@ img{
     top: 180px;
     z-index: 1;
 }
+
 
 
 

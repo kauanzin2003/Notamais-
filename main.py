@@ -3,7 +3,7 @@ import psycopg2
 from flask_cors import CORS
 
 app = Flask(__name__)
-CORS(app)
+CORS(app, resources={r"/*": {"origins": ["http://127.0.0.1:5500"]}})
 
 # Configurações do banco de dados
 db_config = {
@@ -31,11 +31,10 @@ def get_notas():
 # Rota para criar uma nova nota
 @app.route('/crianota', methods=['POST'])
 def create_nota():
-    data = request.get_json()
-    valor_nota = data['valor_nota']
-    ra_aluno_fkey = data['ra_aluno']
-    cod_disciplina_fkey = data['cod_disciplina']
-    ra_professor_fkey = data['ra_professor']
+    valor_nota = request.form.get('nota')
+    ra_aluno_fkey = request.form.get('raAluno')
+    cod_disciplina_fkey = request.form.get('disciplina')
+    ra_professor_fkey = request.form.get('raProfessor')
 
     conn = connect_to_db()
     cur = conn.cursor()
@@ -49,17 +48,16 @@ def create_nota():
 # Rota para editar uma nota existente
 @app.route('/editar/<int:id_nota>', methods=['PUT'])
 def edit_nota(id_nota):
-    data = request.get_json()
+    data = request.form
 
-    ra_aluno = data.get('ra_aluno')
-    cod_disciplina = data.get('cod_disciplina')
-    ra_professor = data.get('ra_professor')
-    valor_nota = data.get('valor_nota')
+    ra_aluno = data.get('raAluno')
+    cod_disciplina = data.get('disciplina')
+    ra_professor = data.get('raProfessor')
+    valor_nota = data.get('nota')
 
     conn = connect_to_db()
     cur = conn.cursor()
 
-    # Atualiza apenas os campos que foram fornecidos no JSON
     cur.execute(
         'UPDATE notas SET ra_aluno = %s, cod_disciplina = %s, ra_professor = %s, valor_nota = %s WHERE id_nota = %s;',
         (ra_aluno, cod_disciplina, ra_professor, valor_nota, id_nota))
